@@ -43,3 +43,26 @@
 
   </div>
 </div>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apelllidos</th>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let respomsable of responsables">
+      <td>{{respomsable['Nombres']}}</td>
+      <td>{{respomsable['Apellidos']}}</td>
+      <td>{{respomsable['NumeroIdentificacion']}}</td>
+      <td>{{respomsable['Email']}}</td>
+      <td>{{respomsable['Telefono']}}</td>
+    </tr>
+  </tbody>
+</table>

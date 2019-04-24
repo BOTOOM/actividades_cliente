@@ -16,7 +16,7 @@ export class ResposableComponent implements OnInit {
   identificacion: string;
   email: string;
   telefono: string;
-
+  responsables: any = [];
   // responsable = {
   //   nombres: this.nombres,
   //   apellidos: this.apellidos,
@@ -27,7 +27,20 @@ export class ResposableComponent implements OnInit {
 
   constructor(
     private actividadesService: ActividadesService,
-  ) { }
+  ) {
+      this.actividadesService.get('responsable/?limit=0')
+        .subscribe(res => {
+          if (res !== null) {
+            // console.log(res);
+            this.responsables = res;
+            console.log(this.responsables);
+          }
+        },
+        (error: HttpErrorResponse) => {
+          console.log('error en la peticion');
+          console.log(error);
+        });
+  }
 
   ngOnInit() {
   }
