@@ -12,8 +12,8 @@ export class ActividadComponent implements OnInit {
 
   // variables de ngmodel
   Nombre: string;
-  FechaCreacion: Date;
-  FechaLimite: Date;
+  FechaCreacion: Date = new Date();
+  FechaLimite: Date = new Date();
   Estado: number;
   Responsable: number;
   actividades: any = [];
@@ -43,8 +43,10 @@ export class ActividadComponent implements OnInit {
       Nombre: this.Nombre,
       FechaCreacion: this.FechaCreacion,
       FechaLimite: this.FechaLimite,
-      Estado: this.Estado,
-      Responsable: this.Responsable
+      Estado: {
+        Id: 1},
+      Responsable: {
+        Id: this.Responsable}
     };
     console.log(actividad);
         this.actividadesService.post('actividades', actividad)

@@ -36,7 +36,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Responsable</span>
       </div>
-      <input type="text" [(ngModel)]="Responsable" class="form-control">
+      <input type="number" [(ngModel)]="Responsable" class="form-control">
     </div>
 
     <button class="btn btn-primary"  (click)="agregarResponsable()">Crear Actividad</button>
@@ -58,11 +58,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let actividad of actividades">
-      <td>{{actividad['Nombres']}}</td>
-      <td>{{actividad['Apellidos']}}</td>
-      <td>{{actividad['NumeroIdentificacion']}}</td>
-      <td>{{actividad['Email']}}</td>
-      <td>{{actividad['Telefono']}}</td>
+      <td>{{actividad['Nombre']}}</td>
+      <td>{{actividad['FechaCreacion'] | date}}</td>
+      <td>{{actividad['FechaLimite'] | date}}</td>
+      <td>{{actividad['Estado']['Nombre']}}</td>
+      <td>{{actividad['Responsable']['Nombres']}} {{actividad['Responsable']['Apellidos']}}</td>
     </tr>
   </tbody>
 </table>
