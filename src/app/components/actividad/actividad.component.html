@@ -1,3 +1,68 @@
-<p>
-  actividad works!
-</p>
+<h2>Responsable</h2>
+<div class="card">
+  <div class="card-header">
+    Añadir Resposable
+  </div>
+  <div class="card-body">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+      </div>
+      <input type="text" [(ngModel)]="Nombre" class="form-control">
+    </div>
+
+    <!-- <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">FechaCreacion</span>
+      </div>
+      <input type="text" [(ngModel)]="FechaCreacion" class="form-control">
+    </div> -->
+
+    <!-- <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">FechaLimite</span>
+      </div>
+      <input type="text" [(ngModel)]="FechaLimite" class="form-control">
+    </div> -->
+
+    <!-- <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Estado</span>
+      </div>
+      <input type="text" [(ngModel)]="Estado" class="form-control">
+    </div> -->
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Responsable</span>
+      </div>
+      <input type="number" [(ngModel)]="Responsable" class="form-control">
+    </div>
+
+    <button class="btn btn-primary"  (click)="agregarResponsable()">Crear Actividad</button>
+
+  </div>
+</div>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Fecha de Creacion</th>
+      <th scope="col">Fecha Limite</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Responsable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let actividad of actividades">
+      <td>{{actividad['Nombre']}}</td>
+      <td>{{actividad['FechaCreacion'] | date}}</td>
+      <td>{{actividad['FechaLimite'] | date}}</td>
+      <td>{{actividad['Estado']['Nombre']}}</td>
+      <td>{{actividad['Responsable']['Nombres']}} {{actividad['Responsable']['Apellidos']}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule  } from '@angular/core';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -29,6 +30,8 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule ,
     RouterModule.forRoot(APP_ROUTING, {useHash: true})
   ],
   providers: [],
