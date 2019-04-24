@@ -1,3 +1,68 @@
-<p>
-  resposable works!
-</p>
+<h2>Responsable</h2>
+<div class="card">
+  <div class="card-header">
+    Añadir Resposable
+  </div>
+  <div class="card-body">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+      </div>
+      <input type="text" [(ngModel)]="nombres" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Apellidos</span>
+      </div>
+      <input type="text" [(ngModel)]="apellidos" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Identificacion</span>
+      </div>
+      <input type="text" [(ngModel)]="identificacion" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">email</span>
+      </div>
+      <input type="text" [(ngModel)]="email" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
+      </div>
+      <input type="text" [(ngModel)]="telefono" class="form-control">
+    </div>
+
+    <button class="btn btn-primary"  (click)="agregarResponsable()">Crear Responsable</button>
+
+  </div>
+</div>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apelllidos</th>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let respomsable of responsables">
+      <td>{{respomsable['Nombres']}}</td>
+      <td>{{respomsable['Apellidos']}}</td>
+      <td>{{respomsable['NumeroIdentificacion']}}</td>
+      <td>{{respomsable['Email']}}</td>
+      <td>{{respomsable['Telefono']}}</td>
+    </tr>
+  </tbody>
+</table>
