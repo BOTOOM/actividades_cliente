@@ -1,6 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {RouterModule} from '@angular/router';
 
+import {HttpClientModule} from '@angular/common/http';
+
+// rutas
+import {APP_ROUTING} from './app.routes';
+
+// compnentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ResposableComponent } from './components/resposable/resposable.component';
@@ -20,7 +27,9 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTING, {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
